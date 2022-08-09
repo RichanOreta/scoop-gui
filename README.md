@@ -6,6 +6,6 @@ A gui for scoop that I made with electron and vue.
 ```
 git clone https://github.com/RichanOreta/scoop-gui
 cd scoop-gui
-npm install
+vue add electron-builder
 npm run electron:serve
 ```
