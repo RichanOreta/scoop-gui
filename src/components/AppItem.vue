@@ -6,13 +6,14 @@
 			</div>
 			<div class="col-4">
 				<button class="btn btn-primary float-end" v-if="appState == 'not installed'" @click="installApp">Install</button>
-				<div class="dropdown" v-else-if="appState == 'installed'">
+				<div class="dropdown" v-else-if="appState == 'installed with persist'">
 					<button class="btn btn-danger dropdown-toggle float-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">Uninstall</button>
 					<ul class="dropdown-menu dropdown-menu-dark">
 						<li><button class="dropdown-item" @click="uninstallApp">Uninstall</button></li>
 						<li><button class="dropdown-item" @click="uninstallAndPurgeApp">Uninstall and purge</button></li>
 					</ul>
 				</div>
+				<button class="btn btn-danger float-end" v-else-if="appState == 'installed'" @click="uninstallApp">Uninstall</button>
 				<button class="btn btn-success float-end" v-else-if="appState == 'outdated'" @click="updateApp">Update</button>
 			</div>
 		</div>

@@ -95,7 +95,7 @@ export function update() {
 				'appName': file.replace('.json', ''),
 				'appVersion': jsonAppData.version,
 				'appDescription': jsonAppData.description,
-				'appState': 'installed',
+				'appState': jsonAppData.persist ? 'installed with persist' : 'installed',
 				'homepage': jsonAppData.homepage
 			})
 		}
@@ -111,7 +111,7 @@ export function update() {
 
 			for (let i = 0; i < $installedApps.length; i++) {
 				if ($installedApps[i]['appName'] == file.replace('.json', '')) {
-					isInstalled = 'installed'
+					isInstalled = jsonAppData.persist ? 'installed with persist' : 'installed'
 					break
 				} else {
 					isInstalled = 'not installed'
